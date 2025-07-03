@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>👥 Employee Management</h1>
+            <p>Add and manage your team members</p>
+        </div>
+
+        <div class="form-section">
+            <form id="employeeForm">
+                <div class="form-group">
+                    <label for="employeeName">Employee Name</label>
+                    <input type="text" id="employeeName" name="employeeName"  placeholder="Enter full name" autocomplete="off">
+                </div>
+
+                <div class="form-group">
+                    <label for="employeeSalary">Salary (₹)</label>
+                    <input type="number" id="employeeSalary" name="employeeSalary"  placeholder="Enter annual salary" min="0" step="1000">
+                </div>
+
+                <div class="form-group">
+                    <label for="employeeRole">Role</label>
+                    <select id="employeeRole" name="employeeRole" >
+                        <option value="">Select a role</option>
+                        <option value="Manager">Manager</option>
+                        <option value="Developer">Developer</option>
+                        <option value="Designer">Designer</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="submit-btn">Add Employee</button>
+            </form>
+        </div>
+
+        <div class="employees-section">
+            <h2 class="section-title">
+                Team Members
+            </h2>
+            
+            <ul class="employees-list" id="employeesList">
+                <div class="empty-state" id="emptyState">
+                    <div class="empty-state-icon">📋</div>
+                    <p>No employees added yet</p>
+                    <small>Use the form above to add your first team member</small>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <script src="./dist/script.js"></script>
+</body>
+</html>

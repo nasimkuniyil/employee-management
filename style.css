@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  min-width: 500px;
+  max-width: 550px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.header p {
+  font-size: 16px;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+.form-section {
+  padding: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #374151;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  transition: all 0.3s ease;
+  background: #fafafa;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Inter", sans-serif;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+.employees-section {
+  padding: 0 30px 30px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.employee-count {
+  background: #667eea;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.employees-list {
+  list-style: none;
+  height: 450px;
+  overflow-y: auto;
+}
+
+.employees-list:has(.employee-card) .empty-state {
+  display: none;
+}
+
+.employee-card {
+  background: linear-gradient(135deg, #667eea10 0%, #764ba210 100%);
+  border: 2px solid #f3f4f6;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.employee-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-color: #667eea;
+}
+
+.employee-info {
+  display: flex;
+  justify-content: between;
+  align-items: center;
+  gap: 15px;
+}
+
+.employee-details {
+  flex: 1;
+}
+
+.employee-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.employee-salary {
+  font-size: 16px;
+  color: #059669;
+  font-weight: 500;
+}
+
+.role-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.role-manager {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.role-developer {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.role-designer {
+  background: #fce7f3;
+  color: #c2185b;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #6b7280;
+}
+
+.empty-state-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.empty-state p {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.empty-state small {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    margin: 10px auto;
+    border-radius: 16px;
+  }
+
+  .header {
+    padding: 20px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .form-section,
+  .employees-section {
+    padding: 20px;
+  }
+
+  .employee-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .role-badge {
+    align-self: flex-start;
+  }
+}
+
+/* Animation for new employees */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.employee-card.new {
+  animation: slideInUp 0.5s ease-out;
+}
